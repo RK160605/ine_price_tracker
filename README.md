@@ -6,13 +6,7 @@ Built for the **INE Software Engineer Intern Assignment**.
 
 ---
 
-## Live Links & Deliverables
 
-- **Hosted Web Dashboard (Vercel)**: `https://ine-price-tracker.vercel.app` *(or custom Vercel deployment)*
-- **Hosted Backend API (Render)**: `https://ine-price-tracker.onrender.com`
-- **GitHub Repository**: `https://github.com/rishabkoul/ine-price-tracker`
-- **Observable Headed Run Video**: `headed_scraper_run_1789847279629.webp` *(included in artifacts and recordings)*
-- **Design Note**: [DESIGN_NOTE.md](./DESIGN_NOTE.md)
 
 ---
 
@@ -117,10 +111,6 @@ MOCK_STORE_URL=https://demo.inelabteamdev.com
 CRON_SECRET=ine-scrape-cron-secret-2026
 PLAYWRIGHT_CHANNEL=chrome
 
-# Optional: Supabase credentials (runs in local persistent mode if omitted)
-SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
-```
 
 Create `.env` in `client/`:
 ```env
@@ -128,14 +118,6 @@ Create `.env` in `client/`:
 VITE_API_URL=
 ```
 
-### 4. Database Setup (Supabase)
-If using Supabase:
-1. Create a new Supabase project.
-2. Go to the **SQL Editor** in your Supabase dashboard.
-3. Paste and run the contents of [`server/src/db/migrations.sql`](./server/src/db/migrations.sql).
-4. Copy your project URL and service role key into `server/.env`.
-
-*(Note: If no Supabase credentials are provided, the server automatically boots in local file-backed mode `data/db.json`, requiring zero configuration to test immediately).*
 
 ### 5. Running in Development Mode
 
@@ -190,26 +172,3 @@ Free-tier hosting instances (such as Render) automatically hibernate or go to sl
 
 ---
 
-## Deployment to Production
-
-### 1. Deploy Database on Supabase
-- Run `server/src/db/migrations.sql` in Supabase SQL Editor.
-
-### 2. Deploy Backend on Render
-- Create a new **Web Service** on Render pointing to your GitHub repository.
-- Root Directory: `server`
-- Build Command: `npm install && npm run build`
-- Start Command: `npm run start`
-- Add Environment Variables:
-  - `PORT`: `4000`
-  - `SUPABASE_URL`: `https://your-project.supabase.co`
-  - `SUPABASE_SERVICE_ROLE_KEY`: `your-key`
-  - `CRON_SECRET`: `your-secret`
-  - `PLAYWRIGHT_CHANNEL`: `chromium`
-
-### 3. Deploy Frontend on Vercel
-- Import repository into Vercel.
-- Root Directory: `client`
-- Framework Preset: `Vite`
-- Environment Variables:
-  - `VITE_API_URL`: `https://your-backend.onrender.com/api`
