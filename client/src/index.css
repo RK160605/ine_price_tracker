@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #3b0824 !important;
+    color: #fff1f5;
+    overflow-x: hidden;
+  }
+}
+
+/* Authentic Rich Velvet Burgundy Background */
+.bg-burgundy-aurora {
+  background-color: #3b0824 !important;
+  background-image: 
+    radial-gradient(at 12% 15%, #6a0d42 0px, transparent 55%),
+    radial-gradient(at 88% 12%, #7a124e 0px, transparent 55%),
+    radial-gradient(at 50% 45%, #520b33 0px, transparent 65%),
+    radial-gradient(at 15% 85%, #680d40 0px, transparent 60%),
+    radial-gradient(at 85% 85%, #801351 0px, transparent 55%),
+    radial-gradient(at 50% 95%, #440729 0px, transparent 65%);
+  background-attachment: fixed;
+}
+
+/* Subtle Velvet Grid Pattern */
+.bg-velvet-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 182, 217, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 182, 217, 0.07) 1px, transparent 1px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #240416;
+}
+::-webkit-scrollbar-thumb {
+  background: #9d175b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #be185d;
+}
+
+/* Keyframe Animations */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(1deg); }
+}
+
+@keyframes pulseBurgundy {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(244, 114, 182, 0.25), inset 0 0 15px rgba(244, 114, 182, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(244, 114, 182, 0.5), inset 0 0 25px rgba(244, 114, 182, 0.3);
+  }
+}
+
+@keyframes shimmerWine {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+.animate-pulse-burgundy {
+  animation: pulseBurgundy 3s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slideUpFade 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-shimmer-wine {
+  background: linear-gradient(90deg, rgba(251,113,133,0) 0%, rgba(244,114,182,0.6) 50%, rgba(253,164,175,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmerWine 2.2s infinite;
+}
+
+/* Rich Burgundy Glassmorphism Cards & Panels */
+.glass-panel-burgundy {
+  background: rgba(58, 10, 37, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(251, 113, 133, 0.28);
+}
+
+.glass-card-burgundy {
+  background: rgba(62, 11, 40, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(251, 113, 133, 0.22);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-burgundy:hover {
+  background: rgba(82, 14, 52, 0.82);
+  border-color: rgba(251, 113, 133, 0.55);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(26, 3, 16, 0.8), 0 0 25px -2px rgba(219, 39, 119, 0.4);
+}

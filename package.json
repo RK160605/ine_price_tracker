@@ -1,0 +1,17 @@
+{
+  "name": "ine-price-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "INE Product Price Tracker (Web Scraping)",
+  "scripts": {
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "scrape:headed": "cd server && npm run scrape:headed",
+    "build:server": "cd server && npm run build",
+    "build:client": "cd client && npm run build",
+    "build": "cd server && npm run build && cd ../client && npm run build"
+  },
+  "keywords": ["web-scraping", "playwright", "react", "supabase", "ine-tracker"],
+  "author": "Rishab Koul",
+  "license": "ISC"
+}
